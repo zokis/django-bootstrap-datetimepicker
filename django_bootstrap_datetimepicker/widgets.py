@@ -28,7 +28,10 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
         if value:
             if isinstance(value, date):
                 value = datetime(value.year, value.month, value.day)
-            value = value.strftime('%d/%m/%Y %H:%M:%S')
+            if isinstance(value, datetime):
+                value = value.strftime('%d/%m/%Y %H:%M:%S')
+        else:
+            value = ''
 
         output = '''
         <div id="id_%s" class="input-append date" data-bootstrap-widget="datetimepicker">
@@ -37,6 +40,6 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
                 <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
             </span>
         </div>
-        ''' % (name, value or '', name)
+        ''' % (name, value, name)
 
         return mark_safe(output)
