@@ -8,8 +8,7 @@ from datetime import date, datetime
 class BootstrapDateTimeInput(forms.DateTimeInput):
     class Media:
         js = (
-            #settings.STATIC_URL + 'datetimepicker/js/bootstrap-datetimepicker.min.js',
-            'https://raw.github.com/tarruda/bootstrap-datetimepicker/master/src/js/bootstrap-datetimepicker.js',
+            settings.STATIC_URL + 'datetimepicker/js/bootstrap-datetimepicker.min.js',
         )
         lang = translation.get_language().split('-')[0].lower()
         if lang == 'pt':
