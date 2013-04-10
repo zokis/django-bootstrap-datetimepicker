@@ -8,19 +8,20 @@ from datetime import date, datetime
 class BootstrapDateTimeInput(forms.DateTimeInput):
     class Media:
         js = (
-            settings.STATIC_URL + 'datetimepicker/js/bootstrap-datetimepicker.min.js',
+            settings.STATIC_URL + 'datepicker/js/bootstrap-datepicker.js',
         )
-        lang = translation.get_language().split('-')[0].lower()
-        if lang == 'pt':
+        lang = translation.get_language()
+        lang = "%s-%s" % (lang.split('-')[0].lower(), lang.split('-')[1].upper()) if '-' in lang else lang
+        if lang != 'en':
             js = js + (
-                settings.STATIC_URL + 'datetimepicker/js/bootstrap-datetimepicker.pt-BR.js',
+                settings.STATIC_URL + 'datepicker/js/locales/bootstrap-datepicker.%s.js' % lang,
             )
         js = js + (
-            settings.STATIC_URL + 'datetimepicker/js/init_datepicker.js',
+            settings.STATIC_URL + 'bootstrap_toolkit/js/init_datepicker.js',
         )
         css = {
             'screen': (
-                settings.STATIC_URL + 'datetimepicker/css/bootstrap-datetimepicker.min.css',
+                settings.STATIC_URL + 'datepicker/css/datepicker.css',
             )
         }
 
