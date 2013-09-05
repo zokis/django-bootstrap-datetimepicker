@@ -21,7 +21,7 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
         )
         css = {
             'screen': (
-                settings.STATIC_URL + 'datepicker/css/bootstrap-datepicker.min.css',
+                settings.STATIC_URL + 'datepicker/css/bootstrap-datetimepicker.min.css',
             )
         }
 
