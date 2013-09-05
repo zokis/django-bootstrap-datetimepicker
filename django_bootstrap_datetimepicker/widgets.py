@@ -8,7 +8,7 @@ from datetime import date, datetime
 class BootstrapDateTimeInput(forms.DateTimeInput):
     class Media:
         js = (
-            settings.STATIC_URL + 'datepicker/js/bootstrap-datepicker.js',
+            settings.STATIC_URL + 'datepicker/js/bootstrap-datetimepicker.min.js',
         )
         lang = translation.get_language()
         lang = "%s-%s" % (lang.split('-')[0].lower(), lang.split('-')[1].upper()) if '-' in lang else lang
