@@ -12,7 +12,7 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
         )
         lang = translation.get_language()
         lang = "%s-%s" % (lang.split('-')[0].lower(), lang.split('-')[1].upper()) if '-' in lang else lang
-        if lang != 'en':
+        if lang != 'en-US':
             js = js + (
                 settings.STATIC_URL + 'datepicker/js/locales/bootstrap-datepicker.%s.js' % lang,
             )
@@ -35,11 +35,9 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
             value = ''
 
         output = '''
-        <div id="id_%s" class="input-append date" data-bootstrap-widget="datetimepicker">
-            <input value="%s" name="%s" data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
-            <span class="add-on">
-                <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
-            </span>
+        <div id="id_%s" class="input-group date" data-bootstrap-widget="datetimepicker">
+            <input class="form-control" value="%s" name="%s"type="text"></input>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
         </div>
         ''' % (name, value, name)
 
