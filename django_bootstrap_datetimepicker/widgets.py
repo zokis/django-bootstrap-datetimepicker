@@ -17,7 +17,7 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
                 settings.STATIC_URL + 'datepicker/js/locales/bootstrap-datepicker.%s.js' % lang,
             )
         js = js + (
-            settings.STATIC_URL + 'bootstrap_toolkit/js/init_datepicker.js',
+            settings.STATIC_URL + 'datepicker/js/init_datepicker.js',
         )
         css = {
             'screen': (
