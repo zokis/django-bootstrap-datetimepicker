@@ -2,7 +2,13 @@ from django import forms
 from django.conf import settings
 from django.utils import translation
 from django.utils.safestring import mark_safe
+
 from datetime import date, datetime
+
+
+DATETIME_INPUT_FORMATS = getattr(settings, 'DATETIME_INPUT_FORMATS', None)
+if DATETIME_INPUT_FORMATS:
+    DATETIME_INPUT_FORMATS = DATETIME_INPUT_FORMATS[0]
 
 
 class BootstrapDateTimeInput(forms.DateTimeInput):
@@ -30,13 +36,16 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
             if isinstance(value, date):
                 value = datetime(value.year, value.month, value.day)
             if isinstance(value, datetime):
-                value = value.strftime('%d/%m/%Y %H:%M:%S')
+                if DATETIME_INPUT_FORMATS:
+                    value = value.strftime(DATETIME_INPUT_FORMATS)
+                else:
+                    value = value.strftime('%d/%m/%Y %H:%M:%S')
         else:
             value = ''
 
         output = '''
         <div id="id_%s" class="input-group date" data-bootstrap-widget="datetimepicker">
-            <input class="form-control" value="%s" name="%s"type="text"></input>
+            <input class="form-control" value="%s" name="%s" type="text"></input>
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
         </div>
         ''' % (name, value, name)
