@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: django-bootstrap-datetimepicker
+Version: 0.2
+Summary: DateTime Picker to Django using Bootstrap Twitter and bootstrap-datetimepicker
+Home-page: https://github.com/zokis/django-bootstrap-datetimepicker
+Author: Marcelo Fonseca Tambalo
+Author-email: marcelo.zokis@gmail.com
+License: WTFPL
+Description: UNKNOWN
+Platform: OS Independent
+Classifier: Framework :: Django
+Classifier: Environment :: Web Environment
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: JavaScript
+Classifier: Natural Language :: Portuguese (Brazilian)Intended Audience :: Developers
+Classifier: Topic :: Utilities
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
