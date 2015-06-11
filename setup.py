@@ -15,11 +15,11 @@ CLASSIFIERS = [
 setup(
     author="Marcelo Fonseca Tambalo",
     author_email="marcelo.zokis@gmail.com",
-    version='0.2',
+    version='1.0',
     name='django-bootstrap-datetimepicker',
     description='DateTime Picker to Django using Bootstrap Twitter and bootstrap-datetimepicker',
     url='https://github.com/zokis/django-bootstrap-datetimepicker',
-    license='WTFPL',
+    license='MIT',
     platforms=['OS Independent'],
     classifiers=CLASSIFIERS,
     install_requires=[
