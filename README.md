@@ -41,7 +41,7 @@ class ToDoForm(forms.Form):
 <!DOCTYPE HTML>
 <html>
   <head>
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     {{ form.media.css }}
   </head>
   <body>
@@ -50,7 +50,7 @@ class ToDoForm(forms.Form):
      src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
     </script> 
     <script type="text/javascript"
-     src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+     src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js">
     </script>
     {{ form.media.js }}
   </body>
