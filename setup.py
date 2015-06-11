@@ -5,7 +5,7 @@ CLASSIFIERS = [
     'Environment :: Web Environment',
     'Programming Language :: Python',
     'Programming Language :: JavaScript',
-    'Natural Language :: Portuguese (Brazilian)'
+    'Natural Language :: Portuguese (Brazilian)',
     'Intended Audience :: Developers',
     'Topic :: Utilities',
     'Topic :: Software Development :: Libraries :: Application Frameworks',
