@@ -23,8 +23,8 @@ Example
 
 ###### forms.py
 ```python
-from django_bootstrap_datetimepicker.widgets import BootstrapDateTimeInput
 from django import forms
+from django_bootstrap_datetimepicker.widgets import BootstrapDateTimeInput
 
 class ToDoForm(forms.Form):
     todo = forms.CharField(
@@ -38,39 +38,21 @@ class ToDoForm(forms.Form):
 ```
 ###### template.html
 ```html
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.css">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js">
-        </script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.js">
-        </script>
-        {{ form.media }}
-    </head>
-    <body>
-        <form method="POST">
-            {% csrf_token %}
-            {% for field in form.visible_fields %}
-            <div id="div_{{ field.html_name }}" class="form-group{% if field.errors %} has-error{% endif %}">
-                {{ field.label_tag }}
-                {{ field }}
-                <div class="text-muted pull-right">
-                    <small>{{ field.help_text }}</small>
-                </div>
-                <div class="help-block">
-                    {{ field.errors }}
-                </div>
-            </div>
-            {% endfor %}
-            {% for hidden in form.hidden_fields %}
-                {{ hidden }}
-            {% endfor %}
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Save changes</button>
-              <button type="button" class="btn">Cancel</button>
-            </div>
-        </form>
-    </body>
-</html>
+  <head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    {{ form.media.css }}
+  </head>
+  <body>
+    {{ form }}
+    <script type="text/javascript"
+     src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+    </script> 
+    <script type="text/javascript"
+     src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+    </script>
+    {{ form.media.js }}
+  </body>
+<html>
 ```
