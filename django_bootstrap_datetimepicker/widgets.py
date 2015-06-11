@@ -34,15 +34,15 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
 
     format_map = (
         ('dd', r'%d'),
-        ('MMMM', r'%B'),
-        ('MMM', r'%b'),
-        ('MM', r'%m'),
-        ('yyyy', r'%Y'),
-        ('yy', r'%y'),
         ('HH', r'%H'),
         ('hh', r'%I'),
+        ('MM', r'%m'),
         ('mm', r'%M'),
+        ('MMM', r'%b'),
+        ('MMMM', r'%B'),
         ('ss', r'%S'),
+        ('yy', r'%y'),
+        ('yyyy', r'%Y'),
     )
 
     def conv_datetime_format_py2js(self, input_format):
