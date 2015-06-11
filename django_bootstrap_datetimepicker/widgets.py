@@ -8,9 +8,6 @@ try:
 except ImportError:  # python3
     from django.utils.encoding import force_text
 
-from datetime import date, datetime
-
-
 DATETIME_INPUT_FORMATS = getattr(settings, 'DATETIME_INPUT_FORMATS', None)
 if DATETIME_INPUT_FORMATS:
     DATETIME_INPUT_FORMATS = DATETIME_INPUT_FORMATS[0]
@@ -91,5 +88,4 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
   else{window.onload = callback;}
  })(window);
 </script>''' % {'name': name, 'value': value, 'options': json.dumps(self.options or {})}
-
         return mark_safe(force_text(html + js))
