@@ -27,7 +27,7 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
             settings.STATIC_URL + 'datepicker/js/init_datepicker.js',
         )
         css = {
-            'screen': (
+            'all': (
                 settings.STATIC_URL + 'datepicker/css/bootstrap-datetimepicker.min.css',
             )
         }
@@ -61,7 +61,6 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
                     value = value.strftime('%d/%m/%Y %H:%M:%S')
         else:
             value = ''
-        print DATETIME_INPUT_FORMATS
         return mark_safe('''
             <div id="id_%s" class="input-append date" data-bootstrap-widget="datetimepicker">
               <input value="%s" name="%s" type="text" data-format="%s"></input>
