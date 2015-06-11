@@ -41,7 +41,7 @@ class ToDoForm(forms.Form):
 <html>
   <head>
     <link
-        href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css"
+        href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css"
         rel="stylesheet">
     {{ form.media.css }}
   </head>
