@@ -27,8 +27,7 @@ from django import forms
 from django_bootstrap_datetimepicker.widgets import BootstrapDateTimeInput
 
 class ToDoForm(forms.Form):
-    todo = forms.CharField(
-        widget=forms.TextInput(attrs={"class": "form-control"}))
+    todo = forms.CharField()
     date = forms.DateTimeField(
         widget=BootstrapDateTimeInput()
     )
@@ -41,7 +40,9 @@ class ToDoForm(forms.Form):
 <!DOCTYPE HTML>
 <html>
   <head>
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link
+        href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css"
+        rel="stylesheet">
     {{ form.media.css }}
   </head>
   <body>
