@@ -1,15 +1,15 @@
 from setuptools import setup, find_packages
 
 CLASSIFIERS = [
-    'Framework :: Django',
     'Environment :: Web Environment',
-    'Programming Language :: Python',
-    'Programming Language :: JavaScript',
-    'Natural Language :: Portuguese (Brazilian)',
+    'Framework :: Django',
     'Intended Audience :: Developers',
-    'Topic :: Utilities',
-    'Topic :: Software Development :: Libraries :: Application Frameworks',
+    'Natural Language :: Portuguese (Brazilian)',
+    'Programming Language :: JavaScript',
+    'Programming Language :: Python',
     'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+    'Topic :: Software Development :: Libraries :: Application Frameworks',
+    'Topic :: Utilities',
 ]
 
 setup(
