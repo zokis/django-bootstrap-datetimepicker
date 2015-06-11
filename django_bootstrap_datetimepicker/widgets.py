@@ -47,15 +47,13 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
                     value = value.strftime('%d/%m/%Y %H:%M:%S')
         else:
             value = ''
-
-        output = '''
-        <div id="id_%s" class="input-group date" data-bootstrap-widget="datetimepicker">
-            <input class="form-control" value="%s" name="%s" type="text"></input>
-            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-        </div>
-        ''' % (name, value, name)
-
-        return mark_safe(output)
+        return mark_safe('''
+            <div id="id_%s" class="input-group date" data-bootstrap-widget="datetimepicker">
+                <input class="form-control" value="%s" name="%s" type="text"></input>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+            ''' % (name, value, name)
+        )
 
 
 class BootstrapTimeInput(forms.TimeInput):
@@ -84,13 +82,10 @@ class BootstrapTimeInput(forms.TimeInput):
                     value = value.strftime('%H:%M')
         else:
             value = ''
-
-        output = '''
-        <div class="input-append bootstrap-timepicker">
-            <input id="id_%s" value="%s" name="%s" type="text" class="form-control">
-            <span class="add-on"><i class="icon-time"></i></span>
-        </div>
-
-        ''' % (name, value, name)
-
-        return mark_safe(output)
+        return mark_safe('''
+            <div class="input-append bootstrap-timepicker">
+                <input id="id_%s" value="%s" name="%s" type="text" class="form-control">
+                <span class="add-on"><i class="icon-time"></i></span>
+            </div>
+            ''' % (name, value, name)
+        )
