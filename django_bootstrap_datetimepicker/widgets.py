@@ -62,21 +62,14 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
         return input_format
 
     def render(self, name, value, attrs=None):
-        if value:
-            if DATETIME_INPUT_FORMATS:
-                value = value.strftime(DATETIME_INPUT_FORMATS)
-            else:
-                value = value.strftime('%d/%m/%Y %H:%M:%S')
-        else:
-            value = ''
-
+        rendered_input = super(BootstrapDateTimeInput, self).render(name, value, attrs)
         html = '''
 <div id="id_%(name)s" class="input-append date" data-bootstrap-widget="datetimepicker">
-  <input value="%(value)s" name="%(name)s" type="text"></input>
+  "%(input)s
   <span class="add-on">
     <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
   </span>
-</div>''' % {'name': name, 'value': value}
+</div>''' % {'name': name, 'input': rendered_input}
 
         js = '''<script type="text/javascript">
  (function(window) {
