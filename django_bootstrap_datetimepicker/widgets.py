@@ -33,8 +33,8 @@ class BootstrapDateTimeInput(forms.DateTimeInput):
 
     format_map = (
         ('dd', r'%d'),
-        ('HH', r'%H'),
-        ('hh', r'%I'),
+        ('HH', r'%I'),
+        ('hh', r'%H'),
         ('MM', r'%m'),
         ('mm', r'%M'),
         ('ss', r'%S'),
